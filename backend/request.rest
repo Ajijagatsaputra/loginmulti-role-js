@@ -74,8 +74,8 @@ POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-    "name": "Jaket Antarestar",
-    "price": 350000
+    "name": "Hodie Zipper",
+    "price": 120000
 }
 
 ###
@@ -91,6 +91,6 @@ Content-Type: application/json
 
 ###
 //Delete Product by id (ambil dari uuidnya)
-DELETE http://localhost:5000/products/b62fff86-ce04-4d91-9919-fa89961b3421
+DELETE http://localhost:5000/products/a8fe2b36-c4a2-48b5-b766-f13fd9df78ec
 
 
