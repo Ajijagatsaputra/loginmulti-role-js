@@ -66,7 +66,7 @@ GET http://localhost:5000/products
 
 ###
 // Get products by id (ambil dari uuidnya)
-GET http://localhost:5000/products/b62fff86-ce04-4d91-9919-fa89961b3421
+GET http://localhost:5000/products/30320755-40af-4474-8e17-933643cf83b9
 
 ###
 //Create Product 
@@ -74,8 +74,23 @@ POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-    "name": "Sweater Smith",
+    "name": "Jaket Antarestar",
+    "price": 350000
+}
+
+###
+//Update Product by id (ambil dari uuidnya)
+PATCH http://localhost:5000/products/935c8fe0-dc1a-496c-b143-3ecb0acb8442
+Content-Type: application/json
+
+{
+    "name": "Baju Koko",
     "price": 150000
 }
+
+
+###
+//Delete Product by id (ambil dari uuidnya)
+DELETE http://localhost:5000/products/b62fff86-ce04-4d91-9919-fa89961b3421
 
 
