@@ -19,15 +19,15 @@ GET http://localhost:5000/users/d2b17390-94c2-47e6-ac58-01f2caf53477
 
 
 ### Update user by id (ambil dari uuidnya)
-PATCH http://localhost:5000/users/d2b17390-94c2-47e6-ac58-01f2caf53477
+PATCH http://localhost:5000/users/06321489-1dee-41d6-944b-324a1ca9bea7
 Content-Type: application/json
 
 {
-    "name": "Lanangejagatupdated",
-    "email": "lj@gmail.com",
+    "name": "admin",
+    "email": "admin@gmail.com",
     "password": "",
     "confPassword": "",
-    "role": "user"
+    "role": "admin"
 }
 
 ### Delete user by id (ambil dari uuidnya)

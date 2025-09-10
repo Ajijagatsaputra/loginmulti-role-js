@@ -1,8 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
 import logo from "../lg_plugin.png";
+import { useDispatch, useSelector } from "react-redux";
+import { LogOut, reset } from "../features/authSlice";
 
 const Navbar = () => {
+   const dispacth = useDispatch();
+  const navigate = useNavigate();
+  const {user} = useSelector((state) => state.auth);
+
+  const logout = () => {
+    dispacth(LogOut());
+    dispacth(reset());
+    navigate("/");
+  }; 
   return (
     <div>
       <nav className="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
@@ -10,8 +21,8 @@ const Navbar = () => {
           <NavLink to="/dashboard" className="navbar-item">
             <img
               src={logo}
-              width="112"
-              height="28"
+              width="100"
+              height="50"
               alt="logo"
             />
           </NavLink>
@@ -34,7 +45,7 @@ const Navbar = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <button className="button is-light">Log out</button>
+                <button onClick={logout} className="button is-light">Log out</button>
               </div>
             </div>
           </div>

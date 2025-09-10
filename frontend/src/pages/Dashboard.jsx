@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "./Layout";
+import Welcome from "../components/Welcome";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getMe } from "../features/authSlice";
 
 const Dashboard = () => {
+  const dispacth = useDispatch();
+  const navigate = useNavigate();
+  const {isError} = useSelector((state) => state.auth);
+
+  useEffect(()=> {
+    dispacth(getMe());
+  }, [dispacth]);
+
+  useEffect(() => {
+    if(isError) {
+      navigate("/");
+    }
+  }, [isError, navigate]);
+
   return (
     <Layout>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-      veritatis cum ducimus nesciunt. Quas quo accusamus ipsa eligendi officiis.
-      Hic eligendi dolore maiores officiis cum laboriosam placeat vitae cumque
-      nam.
+      <Welcome />
     </Layout>
   );
 };
